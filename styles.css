@@ -1,0 +1,100 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    background-color: #a52a2a;
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+#village-section, #raid-section, #resources-section {
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#village-section {
+    text-align: left;
+}
+
+#resources-section {
+    text-align: center;
+}
+
+#raid-section {
+    text-align: center;
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #a52a2a;
+}
+
+button {
+    background-color: #a52a2a;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* styles.css */
+
+/* Add this for a smooth transition when hiding */
+input[type="text"], button {
+    transition: opacity 0.3s ease;
+}
+
+/* Hide the input and button initially */
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #a52a2a;
+    color: white;
+    width: 100%;
+}
+
+/* Flexbox styling for responsive layout */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #village-section, #raid-section, #resources-section {
+        width: 90%;
+    }
+}
