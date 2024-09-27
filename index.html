@@ -3,50 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viking Army Tycoon</title>
+    <title>Idle Viking Army Tycoon</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
-        <h1>Viking Army Tycoon</h1>
-        <input type="text" id="villageNameInput" placeholder="Enter your village name">
-        <button id="setVillageNameButton">Set Village Name</button>
-        <h2 id="villageName">Your Village</h2>
+        <h1>Idle Viking Army Tycoon</h1>
     </header>
 
     <main>
-        <section id="villageResources">
-            <h3>Village Resources</h3>
+        <section id="resources-section">
+            <h2>Resources</h2>
             <p>Wood: <span id="wood">0</span></p>
             <p>Gold: <span id="gold">0</span></p>
             <p>Food: <span id="food">0</span></p>
-        </section>
-
-        <section id="vikingArmy">
-            <h3>Your Viking Army</h3>
             <p>Vikings: <span id="vikingCount">0</span></p>
-            <button id="replenishButton">Replenish Vikings</button>
-        </section>
-
-        <section id="villageBuildings">
-            <h3>Village Buildings</h3>
-            <button id="buildHutButton">Build Hut</button>
-            <button id="upgradeHutButton">Upgrade Hut</button>
-            <button id="buildFarmButton">Build Farm</button>
-            <button id="upgradeFarmButton">Upgrade Farm</button>
-        </section>
-
-        <section id="raidMonasteries">
-            <h3>Raid Mode</h3>
-            <button id="smallRaidButton">Small Raid</button>
-            <button id="mediumRaidButton">Medium Raid</button>
-            <button id="largeRaidButton">Large Raid</button>
             <p>Holy Influence: <span id="holyInfluence">High</span></p>
+        </section>
+
+        <section id="village-section">
+            <h2>Village Management</h2>
+            <p>Village Name: <span id="villageName">Unnamed Village</span></p>
+            <input type="text" id="villageNameInput" placeholder="Enter village name">
+            <button id="setVillageNameButton">Set Village Name</button>
+
+            <!-- Hut Management -->
+            <h3>Build and Upgrade Huts</h3>
+            <button id="buildHutButton">Build Hut (20 Wood)</button>
+            <button id="upgradeHutButton">Upgrade Hut (50 Gold)</button>
+
+            <!-- Farm Management -->
+            <h3>Build and Upgrade Farms</h3>
+            <button id="buildFarmButton">Build Farm (30 Wood)</button>
+            <button id="upgradeFarmButton">Upgrade Farm (50 Gold)</button>
+
+            <!-- Gold Mine Management -->
+            <h3>Build and Upgrade Gold Mines</h3>
+            <button id="buildGoldMineButton">Build Gold Mine (40 Wood)</button>
+            <button id="upgradeGoldMineButton">Upgrade Gold Mine (100 Gold)</button>
+            <p id="goldMineLevel">Gold Mine Level: 1</p>
+        </section>
+
+        <section id="army-section">
+            <h2>Army Management</h2>
+            <p>Replenish Vikings (costs 10 Food)</p>
+            <button id="replenishButton">Replenish Viking Army</button>
+
+            <h3>Raids</h3>
+            <p>Raid Christian Monasteries for Riches:</p>
+            <button id="smallRaidButton">Small Raid (5 Vikings)</button>
+            <button id="mediumRaidButton">Medium Raid (10 Vikings)</button>
+            <button id="largeRaidButton">Large Raid (20 Vikings)</button>
         </section>
     </main>
 
     <footer>
-        <p>Developed by Jafet Egill</p>
+        <p>© 2024 Developed By Jafet Egill</p>
     </footer>
 
     <script src="game.js"></script>
