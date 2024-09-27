@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viking Army Tycoon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Viking Army Tycoon</h1>
+        <input type="text" id="villageNameInput" placeholder="Enter your village name">
+        <button id="setVillageNameButton">Set Village Name</button>
+        <h2 id="villageName">Your Village</h2>
+    </header>
+
+    <main>
+        <section id="villageResources">
+            <h3>Village Resources</h3>
+            <p>Wood: <span id="wood">0</span></p>
+            <p>Gold: <span id="gold">0</span></p>
+            <p>Food: <span id="food">0</span></p>
+        </section>
+
+        <section id="vikingArmy">
+            <h3>Your Viking Army</h3>
+            <p>Vikings: <span id="vikingCount">0</span></p>
+            <button id="replenishButton">Replenish Vikings</button>
+        </section>
+
+        <section id="villageBuildings">
+            <h3>Village Buildings</h3>
+            <button id="buildHutButton">Build Hut</button>
+            <button id="upgradeHutButton">Upgrade Hut</button>
+            <button id="buildFarmButton">Build Farm</button>
+            <button id="upgradeFarmButton">Upgrade Farm</button>
+        </section>
+
+        <section id="raidMonasteries">
+            <h3>Raid Mode</h3>
+            <button id="smallRaidButton">Small Raid</button>
+            <button id="mediumRaidButton">Medium Raid</button>
+            <button id="largeRaidButton">Large Raid</button>
+            <p>Holy Influence: <span id="holyInfluence">High</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Developed by Jafet Egill</p>
+    </footer>
+
+    <script src="game.js"></script>
+</body>
+</html>
