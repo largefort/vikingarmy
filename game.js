@@ -1,14 +1,15 @@
 // game.js
 
 let villageName = "Unnamed Village";
-let wood = 50;
-let gold = 50;
-let food = 50;
+let wood = 0;
+let gold = 0;
+let food = 0;
 let vikingCount = 0;
 let holyInfluence = "High";
 
 let hutLevel = 1;
 let farmLevel = 1;
+let goldMineLevel = 1;
 
 // DOM Elements
 const woodElement = document.getElementById('wood');
@@ -32,7 +33,8 @@ function saveGame() {
         food,
         vikingCount,
         hutLevel,
-        farmLevel
+        farmLevel,
+        goldMineLevel
     };
     localStorage.setItem('vikingTycoonSave', JSON.stringify(gameState));
     console.log('Game saved!');
@@ -50,6 +52,7 @@ function loadGame() {
         vikingCount = gameState.vikingCount || vikingCount;
         hutLevel = gameState.hutLevel || hutLevel;
         farmLevel = gameState.farmLevel || farmLevel;
+        goldMineLevel = gameState.goldMineLevel || goldMineLevel;
         console.log('Game loaded!');
         updateUI();
 
@@ -129,6 +132,32 @@ document.getElementById('upgradeFarmButton').addEventListener('click', () => {
     }
 });
 
+// Function to build gold mine (produces gold over time)
+document.getElementById('buildGoldMineButton').addEventListener('click', () => {
+    if (wood >= 40) {
+        setInterval(() => {
+            gold += goldMineLevel * 5; // Increase gold based on gold mine level
+            updateUI();
+        }, 1000);
+        wood -= 40;
+        updateUI();
+    } else {
+        alert('Not enough wood to build a gold mine!');
+    }
+});
+
+// Function to upgrade gold mine (faster gold production)
+document.getElementById('upgradeGoldMineButton').addEventListener('click', () => {
+    if (gold >= 100) {
+        goldMineLevel += 1;
+        gold -= 100;
+        alert('Gold mine upgraded! Faster gold production.');
+        updateUI();
+    } else {
+        alert('Not enough gold to upgrade the gold mine!');
+    }
+});
+
 // Small Raid (requires 5 Vikings)
 document.getElementById('smallRaidButton').addEventListener('click', () => {
     if (vikingCount >= 5) {
@@ -184,9 +213,9 @@ setInterval(() => {
 // Modify raid rewards based on holy influence
 function adjustForHolyInfluence(resources) {
     if (holyInfluence === 'High') {
-        return resources * 0.5; // Half the rewards
+        return Math.floor(resources * 0.5); // Half the rewards
     } else if (holyInfluence === 'Medium') {
-        return resources * 0.8; // Slightly reduced rewards
+        return Math.floor(resources * 0.8); // Slightly reduced rewards
     } else {
         return resources; // Full rewards
     }
@@ -215,4 +244,7 @@ function updateUI() {
     vikingCountElement.textContent = vikingCount;
     holyInfluenceElement.textContent = holyInfluence;
     villageNameElement.textContent = villageName;
+    
+    // Display gold mine level in the UI if built
+    document.getElementById('goldMineLevel').textContent = `Gold Mine Level: ${goldMineLevel}`;
 }
