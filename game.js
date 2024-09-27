@@ -1,9 +1,9 @@
 // game.js
 
 let villageName = "Unnamed Village";
-let wood = 0;
-let gold = 0;
-let food = 0;
+let wood = 50;
+let gold = 50;
+let food = 50;
 let vikingCount = 0;
 let holyInfluence = "High";
 
